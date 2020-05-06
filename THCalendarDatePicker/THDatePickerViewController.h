@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import <KNSemiModalViewController_hons82/UIViewController+KNSemiModal.h>
+#import <KNSemiModalViewController/UIViewController+KNSemiModal.h>
 
 #import "THDateDay.h"
 
@@ -37,12 +37,6 @@
 @property (strong, nonatomic) UIColor *currentDateColor;
 @property (strong, nonatomic) UIColor *currentDateColorSelected;
 @property (nonatomic) float autoCloseCancelDelay;
-@property (strong, nonatomic) NSTimeZone *dateTimeZone;
-@property (nonatomic, getter=isRounded) BOOL rounded;
-@property (nonatomic, getter=isHistoryFutureBasedOnInternal) BOOL historyFutureBasedOnInternal;
-@property (weak, nonatomic) IBOutlet UIView *toolbarBackgroundView;
-@property (nonatomic) float slideAnimationDuration;
-@property (strong, nonatomic) NSString* dateTitle;
 
 - (void)setDateHasItemsCallback:(BOOL (^)(NSDate * date))callback;
 
@@ -75,38 +69,6 @@
  * \param disableFutureSelection should it be possible?
  */
 - (void)setDisableFutureSelection:(BOOL)disableFutureSelection;
-
-/*! Should it be possible to select dates in history up to a number of days (including today) or 0 if any date
- * \param daysInHistory how many days?
- */
-- (void)setDaysInHistorySelection:(NSUInteger)daysInHistory;
-
-/*! Should it be possible to select dates in future up to a number of days (including today) or 0 if any date
- * \param daysInFuture how many days?
- */
-- (void)setDaysInFutureSelection:(NSUInteger)daysInFuture;
-
-/*! Set the timeZone by name to be used. Valid timezones can be retrieved using [NSTimeZone knownTimeZoneNames]
- * \param the name of the timezone to be used
- * \return successful?
- */
-- (BOOL)setDateTimeZoneWithName:(NSString *)name;
-
-/*! Should it be possible to fast switch the year
- * \param disableYearSwitch should it be possible?
- */
-- (void)setDisableYearSwitch:(BOOL)disableYearSwitch;
-
-/*! Set date range
- * \param fromDate      range from
- * \param toDate        range to
- */
-- (void)setDateRangeFrom:(NSDate *)fromDate toDate:(NSDate *)toDate;
-
-/*! Set calendar title
- * \param dateTitle     calendar title
- */
-- (void)setDateTitle:(NSString*)dateTitle;
 
 /*! Set Ok Button Visibility
  * \param isVisible

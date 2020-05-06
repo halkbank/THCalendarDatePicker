@@ -28,7 +28,6 @@
 @property (strong, nonatomic) UIColor *selectedBackgroundColor;
 @property (strong, nonatomic) UIColor *currentDateColor;
 @property (strong, nonatomic) UIColor *currentDateColorSelected;
-@property (nonatomic, getter=isRounded) BOOL rounded;
 
 - (IBAction)dateButtonTapped:(id)sender;
 
